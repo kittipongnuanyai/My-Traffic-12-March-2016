@@ -14,5 +14,14 @@
         android:layout_height="wrap_content"
         android:text="@string/title_main"
         android:id="@+id/textView"
-        android:textSize="@dimen/h1" />
+        android:textSize="@dimen/h1"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>

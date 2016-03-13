@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         titleStrings[7] = "ทางออก";
         titleStrings[8] = "หยุดรถ";
         titleStrings[9] = "จำกัดความสูง 2.5 เมตร";
-        titleStrings[10] = "ย้ายซ้ายขวา";
+        titleStrings[10] = "เลี้ยวซ้ายขวา";
         titleStrings[11] = "ห้ามกลับรถ";
         titleStrings[12] = "ห้ามจอด";
         titleStrings[13] = "รถสวน";

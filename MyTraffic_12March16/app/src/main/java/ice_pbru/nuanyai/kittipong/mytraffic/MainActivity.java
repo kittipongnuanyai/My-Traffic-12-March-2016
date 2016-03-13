@@ -27,11 +27,57 @@ public class MainActivity extends AppCompatActivity {
         //4 Button Controller
         buttonController();
 
+        // Create ListView
+        createListView();
+
 
 
 
 
     } //Main Method (สิ่งที่อยู่ใน method is statement จบด้วย ;)
+
+    private void createListView() {
+
+
+        int[] intIcon = {R.drawable.traffic_01 ,R.drawable.traffic_02, R.drawable.traffic_03 ,R.drawable.traffic_04 ,R.drawable.traffic_05,
+                        R.drawable.traffic_06 ,R.drawable.traffic_07, R.drawable.traffic_08 ,R.drawable.traffic_09 ,R.drawable.traffic_10,
+                        R.drawable.traffic_11 ,R.drawable.traffic_12, R.drawable.traffic_13 ,R.drawable.traffic_14 ,R.drawable.traffic_15,
+                        R.drawable.traffic_16 ,R.drawable.traffic_17, R.drawable.traffic_18 ,R.drawable.traffic_19 ,R.drawable.traffic_20,};
+
+
+        String[] titleStrings = new String[20];
+        titleStrings[0] = "ห้ามเลี้ยวซ้าย";
+        titleStrings[1] = "ห้ามเลี้ยวขวา";
+        titleStrings[2] = "ให้ตรงไป";
+        titleStrings[3] = "เลี้ยวขวา";
+        titleStrings[4] = "เลี้ยวซ้าย";
+        titleStrings[5] = "ทางออก";
+        titleStrings[6] = "ทางเข้า";
+        titleStrings[7] = "ทางออก";
+        titleStrings[8] = "หยุดรถ";
+        titleStrings[9] = "จำกัดความสูง 2.5 เมตร";
+        titleStrings[10] = "ย้ายซ้ายขวา";
+        titleStrings[11] = "ห้ามกลับรถ";
+        titleStrings[12] = "ห้ามจอด";
+        titleStrings[13] = "รถสวน";
+        titleStrings[14] = "ห้ามแซง";
+        titleStrings[15] = "ทางโค้ง";
+        titleStrings[16] = "โปรดหยุดรถ";
+        titleStrings[17] = "จำกัดความเร็ว 50km/hr";
+        titleStrings[18] = "จำกัดความกล้าง 2.5 เมตร";
+        titleStrings[19] = "จำกัดความสูง 5 เมตร";
+
+
+        String[] detailStrings = getResources().getStringArray(R.array.detail_short);
+
+        MyAdapter myAdapter = new MyAdapter(MainActivity.this, intIcon, titleStrings, detailStrings);
+        trafficListView.setAdapter(myAdapter);
+
+
+
+
+    }   //CreateListView
+
 
     private void buttonController() {
         //Class obj = new class()

@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -39,13 +40,13 @@ public class MainActivity extends AppCompatActivity {
     private void createListView() {
 
 
-        int[] intIcon = {R.drawable.traffic_01 ,R.drawable.traffic_02, R.drawable.traffic_03 ,R.drawable.traffic_04 ,R.drawable.traffic_05,
+        final int[] intIcon = {R.drawable.traffic_01 ,R.drawable.traffic_02, R.drawable.traffic_03 ,R.drawable.traffic_04 ,R.drawable.traffic_05,
                         R.drawable.traffic_06 ,R.drawable.traffic_07, R.drawable.traffic_08 ,R.drawable.traffic_09 ,R.drawable.traffic_10,
                         R.drawable.traffic_11 ,R.drawable.traffic_12, R.drawable.traffic_13 ,R.drawable.traffic_14 ,R.drawable.traffic_15,
                         R.drawable.traffic_16 ,R.drawable.traffic_17, R.drawable.traffic_18 ,R.drawable.traffic_19 ,R.drawable.traffic_20,};
 
 
-        String[] titleStrings = new String[20];
+        final String[] titleStrings = new String[20];
         titleStrings[0] = "ห้ามเลี้ยวซ้าย";
         titleStrings[1] = "ห้ามเลี้ยวขวา";
         titleStrings[2] = "ให้ตรงไป";
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         titleStrings[12] = "ห้ามจอด";
         titleStrings[13] = "รถสวน";
         titleStrings[14] = "ห้ามแซง";
-        titleStrings[15] = "ทางโค้ง";
+        titleStrings[15] = "ทางเข้า";
         titleStrings[16] = "โปรดหยุดรถ";
         titleStrings[17] = "จำกัดความเร็ว 50km/hr";
         titleStrings[18] = "จำกัดความกล้าง 2.5 เมตร";
@@ -75,6 +76,23 @@ public class MainActivity extends AppCompatActivity {
 
 
         //
+
+        trafficListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+
+                Intent intent = new Intent(MainActivity.this,DetailActivity.class);
+
+                intent.putExtra("Title", titleStrings[i]);
+                intent.putExtra("Image", intIcon[i]);
+                intent.putExtra("Index", i);
+
+                startActivity(intent);
+
+
+
+            }   //On ItemClick
+        });
 
 
 
